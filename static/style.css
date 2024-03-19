@@ -63,7 +63,7 @@ nav{
     left: 50%;
     top: 50%;
     width: 90%;
-    max-width: 710px;
+    max-width: fit-content;
     transform: translate(-50%, -50%);
     text-align: center;
 
@@ -71,7 +71,7 @@ nav{
 .welcome-msg h1{
     position: relative;
     color: #fff;
-    font-family: "Crafty Girls", cursive;
+    font-family: 'Waiting for the Sunrise', cursive;
     font-size: 40px;
     white-space: nowrap;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -94,3 +94,18 @@ nav{
     from, to { border-color: transparent }
     50% { border-color: orange }
   }
+
+.signup-form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    max-width: fit-content;
+    max-height: fit-content;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.signup-form label{
+    font-family: "Allan", serif;
+    color: white;
+}
