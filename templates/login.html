@@ -7,3 +7,24 @@
         <li><a href="/signup">Sign Up</a></li>
     </ul>
 {% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <h1>Log In</h1>
+    <div class="input">
+        <input type="text" placeholder="Username" required>
+    </div>
+
+    <div class="input">
+        <input type="password" placeholder="Password" required>
+    </div>
+
+    <div class="btn">
+        <button>LOGIN</button>
+    </div>
+
+    <div class="reg">
+        <p>Don't have an account?<a href="/signup">Sign Up</a></p>
+    </div>
+</div>
+{% endblock %}
