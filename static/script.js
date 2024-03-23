@@ -1,4 +1,5 @@
 var guessCounter = 0;
+var pressed = false;
 
 function myFunc(){
     return wordlen, word;
@@ -46,11 +47,15 @@ function letterGuessed(buttonValue){
 
 document.addEventListener("keydown", (event) => {
     const keyPressed = event.key;
-    if (keyPressed.codePointAt(0) >= 97 && keyPressed.codePointAt(0) <= 122){
-        letterGuessed(keyPressed);
-    }
-    else if (keyPressed.codePointAt(0) >= 65 && keyPressed.codePointAt(0) <= 90){
-        letterGuessed(String.fromCharCode(keyPressed.codePointAt(0) + 32));
+    if (!pressed){
+        pressed = true;
+        if (keyPressed.codePointAt(0) >= 97 && keyPressed.codePointAt(0) <= 122){
+            letterGuessed(keyPressed);
+        }
+        else if (keyPressed.codePointAt(0) >= 65 && keyPressed.codePointAt(0) <= 90){
+            letterGuessed(String.fromCharCode(keyPressed.codePointAt(0) + 32));
+        };
     };
+    window.addEventListener("keyup", function(){pressed = false;});
 });
 
