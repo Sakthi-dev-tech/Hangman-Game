@@ -7,6 +7,7 @@
 
 body{
     background:#080008;
+    color: white;
 }
 .header{
     height: 10vh;
@@ -95,22 +96,47 @@ nav{
     50% { border-color: orange }
   }
 
-.signup-form{
+.settings-list{
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 90%;
-    max-width: fit-content;
-    max-height: fit-content;
+    max-width: 100%;
+    max-height: 50vh;
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.signup-form label{
-    font-family: "Allan", serif;
-    color: white;
+
+#lives{
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    max-width: 20vw;
 }
 
-.wrapper{
-    background-color: transparent;
-    
+.game-container{
+    position: relative;
+   color: #fff;
+   width: 75%;
+   left: 12.5%;
+   display: flex;
+   place-items: center;
+    margin-top: 20%;
+    max-height: 100vh;
+}
+
+.word-guesser{
+    align-items: center;
+    position: absolute;
+    display: flex;
+    right: 20vh;
+    max-width: 50%;
+    height: fit-content;
+    user-select: none;
+}
+
+.word-guesser h3{
+    margin: 50px;
+    font-size: 50px;
+    font-weight: 300;
+    color: rgb(232, 160, 75);
 }

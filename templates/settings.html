@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block head %} 
+<title>Hangman</title>
+{% endblock %}
+
+
+{% block navbar %}
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+<div class="settings-list">
+    <form action="/game">
+        <label for="word-type" style="color: white;">Choose the type of word:</label>
+        <br>
+        <select name="word-type" id="word-type">
+            <option selected disabled>--Select--</option>
+            <option value="noun">Noun</option>
+            <option value="verb">Verb</option>
+            <option value="profanity">Profanity</option>
+        </select>
+        <br>
+        <label for="wordl" style="color: white;">Length of Word (Min 3, Max 8):</label>
+        <br>
+        
+        <select name="wordl" id="wordl">
+                <option disabled selected>--Select--</option>
+            {% for i in range(3, 9) %}
+                <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        
+        <br>
+        <button type="submit">Play!</button>
+    </form>
+</div>
+{% endblock %}

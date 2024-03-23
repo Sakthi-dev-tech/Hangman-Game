@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block head %} 
+<title>Game</title>
+<script type="text/javascript">const wordlen = parseInt('{{wordl}}'); const word = '{{word}}'</script>
+{% endblock %}
+
+
+{% block navbar %}
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/settings">Settings</a></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+
+<div id="lives" style="display: flex;"><h2>Lives: <h2 id="remaining-lives" style="margin-left: 10px;">7</h2></h2></div>
+
+<div class="game-container">
+    <div class="hangman-drawing">
+
+    </div>
+
+    <div class="word-guesser">
+        {% for i in range(wordl) %}
+            <h3 class="{{word[i]}}">_</h3>
+        {% endfor %}
+    </div>
+</div>  
+{% endblock %}
