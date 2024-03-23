@@ -16,7 +16,6 @@ function letterGuessed(buttonValue){
         if (targetElement){
             var element = targetElement[i];
             element.innerHTML = buttonValue;
-            guessCounter++;
             loseLife = false;
         }
     };
@@ -35,12 +34,20 @@ function letterGuessed(buttonValue){
             window.location.reload();
         };
     }
-    else{
-        if (guessCounter === wordlen){
-            setTimeout(2000);
-            alert("You Won! The word was: " + word);
-            window.location.reload();
+    
+    var won = true;
+    var divElements = document.querySelectorAll("h3");
+    
+    for (var i = 0; i < divElements.length; i++){
+        if (divElements[i].innerHTML === '_'){
+            won = false;
+            break;
         };
+    };
+
+    if (won){
+        alert("You won! The word was: " + word);
+        window.location.reload();
     };
     
 };

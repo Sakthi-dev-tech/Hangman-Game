@@ -106,6 +106,66 @@ nav{
     text-align: center;
 }
 
+.settings-list label {
+    margin: 20px;
+  }
+  
+.settings-list select {
+font-size: 16px;
+padding: 10px 15px;
+border: 1px solid #ccc;
+border-radius: 3px;
+margin-bottom: 20px;
+width: 100%;
+}
+
+.settings-list button {
+padding: .5em .8em;
+color: white;
+position: relative;
+text-decoration: none;
+font-size: 20px;
+background-color: black;
+}
+
+.settings-list button::before,
+.settings-list button::after {
+content: '';
+height: 14px;
+width: 14px;
+position: absolute;
+transition: all .35s ease;
+opacity: 0;
+}
+
+.settings-list button::before {
+content: '';
+right: 0;
+top: 0;
+border-top: 3px solid #de9102;
+border-right: 3px solid #91660f;
+transform: translate(-100%, 50%);
+}
+
+.settings-list button:after {
+content: '';
+left: 0;
+bottom: 0;
+border-bottom: 3px solid #91660f;
+border-left: 3px solid #de9102;
+transform: translate(100%, -50%)
+}
+
+.settings-list button:hover:before,
+.settings-list button:hover:after{
+transform: translate(0,0);
+opacity: 1;
+}
+
+.settings-list button:hover {
+color: #de9102;
+}
+
 #lives{
     position: absolute;
     right: 100px;

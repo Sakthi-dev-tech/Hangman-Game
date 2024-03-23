@@ -13,8 +13,14 @@ def settings():
 
 @views.route("/game")
 def game():
+    
     wordt = request.args.get('word-type')
-    wordl = int(request.args.get('wordl'))
+    wordl = request.args.get('wordl')
+
+    if wordt == None or wordl == None:
+        return render_template("settings.html")
+    else:
+        wordl = int(wordl)
     
     if wordt == 'noun':
         w = RandomWord(adj=Defaults.NOUNS)
