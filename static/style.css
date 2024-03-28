@@ -3,6 +3,7 @@
     padding: 0;
     font-family: "poppins", sans-serif;
     box-sizing: border-box;
+    max-height: 100%;
 }
 
 body{
@@ -176,12 +177,19 @@ color: #de9102;
 .game-container{
     position: relative;
    color: #fff;
-   width: 75%;
-   left: 12.5%;
+   width: 80%;
    display: flex;
    place-items: center;
-    margin-top: 20%;
-    max-height: 100vh;
+   max-height: 100vh;
+   margin-top: 5%;
+   margin-left: 10%;
+}
+
+.hangman-drawing{
+    user-select: none;
+    max-width: fit-content;
+    display: flex;
+    height: fit-content;
 }
 
 .word-guesser{
@@ -199,4 +207,27 @@ color: #de9102;
     font-size: 50px;
     font-weight: 300;
     color: rgb(232, 160, 75);
+}
+
+.error-code{
+    align-items: center;
+    position: relative;
+    text-align: left;
+    max-width: 80%;
+    max-height: fit-content;
+    top: 10vh;
+    left: 10%;
+}
+
+.error-code img{
+    max-width: 30%;
+    margin-left: 35%;
+}
+
+.error-code h1{
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 365;
+    font-style: italic;
+    text-align: center;
 }

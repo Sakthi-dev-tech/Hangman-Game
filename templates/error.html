@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block head %} 
+<title>Error</title>
+{% endblock %}
+
+
+{% block navbar %}
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/settings">Settings</a></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+    <div class="error-code">
+        <img src="../static/media/error.png" alt="Error Image">
+        <h1>Please ensure you have selected all the proper settings in the settings page! Thank you&#128077;</h1>
+    </div>
+{% endblock %}

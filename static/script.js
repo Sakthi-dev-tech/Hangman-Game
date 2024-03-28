@@ -1,5 +1,6 @@
 var guessCounter = 0;
 var pressed = false;
+var image_count = 0;
 
 function myFunc(){
     return wordlen, word;
@@ -22,6 +23,7 @@ function letterGuessed(buttonValue){
 
     if (loseLife){
         const livesSpan = document.getElementById("remaining-lives");
+        const image = document.getElementById("image");
         let currentLives = parseInt(livesSpan.textContent);
 
         if (currentLives > 0){
@@ -33,6 +35,10 @@ function letterGuessed(buttonValue){
             alert("Game Over!");
             window.location.reload();
         };
+
+        image_count = image_count + 1;
+        console.log(image_count);
+        image.src = "../static/media/" + image_count + ".jpg";
     }
     
     var won = true;

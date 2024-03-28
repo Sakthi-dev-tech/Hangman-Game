@@ -18,9 +18,13 @@ def game():
     wordl = request.args.get('wordl')
 
     if wordt == None or wordl == None:
-        return render_template("settings.html")
+        return render_template("error.html")
     else:
         wordl = int(wordl)
+        if wordl >= 3 and wordl <= 8:
+            pass
+        else:
+            return render_template("error.html")
     
     if wordt == 'noun':
         w = RandomWord(adj=Defaults.NOUNS)
@@ -29,6 +33,8 @@ def game():
     elif wordt == 'profanity':
         w = RandomWord(adj=Defaults.PROFANITIES)
 
-    word = w.random_words(amount=1, word_max_length=wordl, word_min_length=wordl)
-
-    return render_template("game.html", word=word[0], wordl = wordl)
+    try:
+        word = w.random_words(amount=1, word_max_length=wordl, word_min_length=wordl)
+        return render_template("game.html", word=word[0], wordl = wordl)
+    except:
+        return render_template("error.html")
